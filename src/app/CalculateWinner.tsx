@@ -1,3 +1,4 @@
+'use client';
 export default function CalculateWinner(squares: Array<string | null>): string | null {
     const lines: Array<[number, number, number]> = [
         [0, 1, 2],

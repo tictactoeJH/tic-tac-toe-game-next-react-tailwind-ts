@@ -1,3 +1,4 @@
+'use client';
 import Square from './Square';
 import CalculateWinner from './CalculateWinner';
 

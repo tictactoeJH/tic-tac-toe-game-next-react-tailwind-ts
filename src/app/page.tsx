@@ -1,13 +1,18 @@
-import Board from './components/Board';
+'use client';
+import { useState } from 'react';
+import Board from './Board';
 
 export default function App() {
-  const initialSquares = Array(9).fill(null);
-  const handlePlay = (squares: (string | null)[]) => {
-    console.log('Play clicked with squares: ', squares);
-  };
+  const [squares, setSquares] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState(true);
+
+  const handlePlay = (newSquares: (string | null)[]) => {
+    setSquares(newSquares);
+    setXIsNext(!xIsNext);
+  }
   return (
     <>
-      <Board xIsNext={false} squares={initialSquares} onPlay={handlePlay}/>
+      <Board squares={squares} xIsNext={xIsNext} onPlay={handlePlay}/>
     </>
   );
 }

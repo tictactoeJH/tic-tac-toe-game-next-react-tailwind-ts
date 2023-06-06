@@ -1,5 +1,5 @@
+'use client';
 import { useState } from 'react';
-// maybe remove mouseEventHandler
 import Board from './Board';
 
 type HistoryType = Array<Array<string | null>>;
