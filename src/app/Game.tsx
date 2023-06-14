@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Board from './Board';
+import ContentCenterer from './ContentCenterer';
 
 type HistoryType = Array<Array<string | null>>;
 
@@ -36,12 +37,12 @@ export default function Game() {
     });
 
     return (
-        <div>
+        <ContentCenterer>
             <div>
                 <Board xIsNext={xIsNext} squares={currentSquares}
                 onPlay={handlePlay} />
             </div>
             <div><ol>{moves}</ol></div>
-        </div>
+        </ContentCenterer>
     );
 }

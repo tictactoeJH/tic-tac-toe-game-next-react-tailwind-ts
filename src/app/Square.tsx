@@ -8,6 +8,6 @@ interface SquareProps {
 
 export default function Square({ value, onSquareClick }: SquareProps) {
     return (
-        <button onClick={onSquareClick}>{value}</button>
+        <button onClick={onSquareClick} className="p-5 bg-black">{value}</button>
     );
 }
