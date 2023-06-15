@@ -30,19 +30,17 @@ export default function Game() {
             description = 'Go to game start';
         }
         return (
-            <li key={move}>
-                <button onClick={() => jumpTo(move)}>{description}</button>
-            </li>
+        <li key={move}>
+            <button className="inline-flex items-center font-medium text-center text-white text-base bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 
+            focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-4 py-1" 
+            onClick={() => jumpTo(move)}>{description}</button>
+        </li>
         );
     });
 
     return (
-        <ContentCenterer>
-            <div>
-                <Board xIsNext={xIsNext} squares={currentSquares}
-                onPlay={handlePlay} />
-            </div>
-            <div><ol>{moves}</ol></div>
-        </ContentCenterer>
+        <div><ContentCenterer><div>
+            <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} /><div className="pt-4"><ol className="flex justify-center">{moves}</ol></div>
+        </div></ContentCenterer></div>
     );
 }
