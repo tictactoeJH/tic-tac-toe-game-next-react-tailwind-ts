@@ -27,20 +27,20 @@ export default function Game() {
         if (move > 0) {
             description = 'Go to move #' + move;
         } else {
-            description = 'Go to game start';
+            description = 'Go to move #0';
         }
         return (
-        <li key={move}>
+        <li className="pb-1" key={move}>
             <button className="inline-flex items-center font-medium text-center text-white text-base bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 
-            focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-4 py-1" 
-            onClick={() => jumpTo(move)}>{description}</button>
+            focus:outline-none focus:ring-blue-300 px-4 py-1" onClick={() => jumpTo(move)}>{description}</button>
         </li>
         );
     });
 
     return (
-        <div><ContentCenterer><div>
-            <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} /><div className="pt-4"><ol className="flex justify-center">{moves}</ol></div>
-        </div></ContentCenterer></div>
+    <>
+    <ContentCenterer><div><Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} /></div></ContentCenterer>
+    <div className="flex justify-center"><ol className="absolute top-[88%] sm:fixed sm:top-[34%] sm:right-[10%] lg:right-1/4">{moves}</ol></div>
+    </>
     );
 }
